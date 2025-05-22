@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+accelerate
+pillow
+python-multipart
+qwen-vl-utils[decord]==0.0.8
+git+https://github.com/huggingface/transformers.git@tiny-fixes-qwen2.5-vl
