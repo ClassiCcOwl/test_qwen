@@ -12,17 +12,16 @@ RUN apt-get update && apt-get install -y \
     git lfs install && \
     rm -rf /var/lib/apt/lists/*
 
-RUN git clone https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct /app/Qwen2.5-VL-7B-Instruct
-
 COPY requirements.txt .
-
-
 RUN pip install --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt && \
     pip install --pre torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu128
 
 
 COPY flow.py .
+COPY download_model.py .
+
+RUN python download_model.py
 
 EXPOSE 8000
 

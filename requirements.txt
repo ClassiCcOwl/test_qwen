@@ -4,4 +4,5 @@ accelerate
 pillow
 python-multipart
 qwen-vl-utils[decord]==0.0.8
+huggingface_hub
 git+https://github.com/huggingface/transformers.git@tiny-fixes-qwen2.5-vl
